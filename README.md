@@ -60,17 +60,11 @@ Status    : Open to Opportunities ✅
 
 ---
 
-## 🐍 Contribution Snake
+##  Contribution 
 
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/alam292/alam292/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/alam292/alam292/output/github-snake.svg" />
-  <img alt="Red snake eating my contributions" src="https://raw.githubusercontent.com/alam292/alam292/output/github-snake-dark.svg" />
-</picture>
-
-</div>
+<p align="center">
+  <img src="https://github.com/alam292/alam292/blob/output/pacman-contribution-graph-dark.svg" />
+</p>
 
 ---
 
