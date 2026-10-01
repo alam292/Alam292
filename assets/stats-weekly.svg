@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 250" width="980" height="250">
+<rect width="980" height="250" rx="14" fill="#0D1117"/>
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E63946" stop-opacity=".55"/><stop offset="1" stop-color="#E63946" stop-opacity="0"/></linearGradient></defs>
+<text x="490.0" y="30" text-anchor="middle" font-family="Fira Code,Consolas,monospace" font-size="16" font-weight="700" fill="#E63946">Weekly contributions</text>
+<text x="490.0" y="48" text-anchor="middle" font-family="Fira Code,Consolas,monospace" font-size="11" fill="#8B949E">animated · peak week: 24 contributions</text>
+<line x1="44" y1="206.0" x2="956" y2="206.0" stroke="#21262d"/><text x="38" y="210.0" text-anchor="end" font-family="Fira Code,Consolas,monospace" font-size="10" fill="#8B949E">0</text>
+<line x1="44" y1="138.0" x2="956" y2="138.0" stroke="#21262d"/><text x="38" y="142.0" text-anchor="end" font-family="Fira Code,Consolas,monospace" font-size="10" fill="#8B949E">12</text>
+<line x1="44" y1="70.0" x2="956" y2="70.0" stroke="#21262d"/><text x="38" y="74.0" text-anchor="end" font-family="Fira Code,Consolas,monospace" font-size="10" fill="#8B949E">24</text>
+<path d="M44.0,206 L44.0,206.0 L61.5,206.0 L79.1,206.0 L96.6,206.0 L114.2,206.0 L131.7,206.0 L149.2,206.0 L166.8,206.0 L184.3,206.0 L201.8,206.0 L219.4,206.0 L236.9,206.0 L254.5,206.0 L272.0,206.0 L289.5,206.0 L307.1,206.0 L324.6,206.0 L342.2,206.0 L359.7,206.0 L377.2,206.0 L394.8,206.0 L412.3,206.0 L429.8,206.0 L447.4,206.0 L464.9,206.0 L482.5,104.0 L500.0,98.3 L517.5,177.7 L535.1,155.0 L552.6,166.3 L570.2,87.0 L587.7,81.3 L605.2,70.0 L622.8,183.3 L640.3,177.7 L657.8,206.0 L675.4,189.0 L692.9,194.7 L710.5,206.0 L728.0,206.0 L745.5,206.0 L763.1,206.0 L780.6,206.0 L798.2,200.3 L815.7,206.0 L833.2,206.0 L850.8,206.0 L868.3,206.0 L885.8,200.3 L903.4,138.0 L920.9,206.0 L938.5,149.3 L956.0,177.7 L956.0,206 Z" fill="url(#g)" opacity="0"><animate attributeName="opacity" dur="8.0s" repeatCount="indefinite" keyTimes="0;0.5;1" values="0;1;1"/></path>
+<path d="M44.0,206.0 L61.5,206.0 L79.1,206.0 L96.6,206.0 L114.2,206.0 L131.7,206.0 L149.2,206.0 L166.8,206.0 L184.3,206.0 L201.8,206.0 L219.4,206.0 L236.9,206.0 L254.5,206.0 L272.0,206.0 L289.5,206.0 L307.1,206.0 L324.6,206.0 L342.2,206.0 L359.7,206.0 L377.2,206.0 L394.8,206.0 L412.3,206.0 L429.8,206.0 L447.4,206.0 L464.9,206.0 L482.5,104.0 L500.0,98.3 L517.5,177.7 L535.1,155.0 L552.6,166.3 L570.2,87.0 L587.7,81.3 L605.2,70.0 L622.8,183.3 L640.3,177.7 L657.8,206.0 L675.4,189.0 L692.9,194.7 L710.5,206.0 L728.0,206.0 L745.5,206.0 L763.1,206.0 L780.6,206.0 L798.2,200.3 L815.7,206.0 L833.2,206.0 L850.8,206.0 L868.3,206.0 L885.8,200.3 L903.4,138.0 L920.9,206.0 L938.5,149.3 L956.0,177.7" fill="none" stroke="#E63946" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="1440" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" dur="8.0s" repeatCount="indefinite" keyTimes="0;0.5;1" values="1440;0;0"/></path>
+<circle cx="605.2" cy="70.0" r="4" fill="#FFF"><animate attributeName="r" values="3;6;3" dur="1.6s" repeatCount="indefinite"/></circle>
+<text x="44.0" y="224" font-family="Fira Code,Consolas,monospace" font-size="10" fill="#8B949E">Sep</text>
+<text x="96.6" y="224" font-family="Fira Code,Consolas,monospace" font-size="10" fill="#8B949E">Oct</text>
+<text x="149.2" y="224" font-family="Fira Code,Consolas,monospace" font-size="10" fill="#8B949E">Nov</text>
+<text x="219.4" y="224" font-family="Fira Code,Consolas,monospace" font-size="10" fill="#8B949E">Dec</text>
+<text x="289.5" y="224" font-family="Fira Code,Consolas,monospace" font-size="10" fill="#8B949E">Jan</text>
+<text x="359.7" y="224" font-family="Fira Code,Consolas,monospace" font-size="10" fill="#8B949E">Feb</text>
+<text x="429.8" y="224" font-family="Fira Code,Consolas,monospace" font-size="10" fill="#8B949E">Mar</text>
+<text x="517.5" y="224" font-family="Fira Code,Consolas,monospace" font-size="10" fill="#8B949E">Apr</text>
+<text x="587.7" y="224" font-family="Fira Code,Consolas,monospace" font-size="10" fill="#8B949E">May</text>
+<text x="675.4" y="224" font-family="Fira Code,Consolas,monospace" font-size="10" fill="#8B949E">Jun</text>
+<text x="745.5" y="224" font-family="Fira Code,Consolas,monospace" font-size="10" fill="#8B949E">Jul</text>
+<text x="815.7" y="224" font-family="Fira Code,Consolas,monospace" font-size="10" fill="#8B949E">Aug</text>
+</svg>
