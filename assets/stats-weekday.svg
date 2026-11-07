@@ -20,7 +20,7 @@
 <rect x="352.7" y="86.0" width="34" height="140.0" rx="4" fill="#ff4d4d"/>
 <text x="369.7" y="81.0" text-anchor="middle" font-family="Fira Code,Consolas,monospace" font-size="11" fill="#C9D1D9">70</text>
 <text x="369.7" y="242" text-anchor="middle" font-family="Fira Code,Consolas,monospace" font-size="11" fill="#8B949E">Fri</text>
-<rect x="415.6" y="138.0" width="34" height="88.0" rx="4" fill="#8b0000"/>
-<text x="432.6" y="133.0" text-anchor="middle" font-family="Fira Code,Consolas,monospace" font-size="11" fill="#C9D1D9">44</text>
+<rect x="415.6" y="124.0" width="34" height="102.0" rx="4" fill="#8b0000"/>
+<text x="432.6" y="119.0" text-anchor="middle" font-family="Fira Code,Consolas,monospace" font-size="11" fill="#C9D1D9">51</text>
 <text x="432.6" y="242" text-anchor="middle" font-family="Fira Code,Consolas,monospace" font-size="11" fill="#8B949E">Sat</text>
 <line x1="20" y1="226" x2="460" y2="226" stroke="#30363d"/></svg>
