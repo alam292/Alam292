@@ -2,8 +2,8 @@
 <rect width="480" height="270" rx="14" fill="#0D1117"/>
 <text x="240.0" y="30" text-anchor="middle" font-family="Fira Code,Consolas,monospace" font-size="16" font-weight="700" fill="#E63946">Contributions by weekday</text>
 <text x="240.0" y="48" text-anchor="middle" font-family="Fira Code,Consolas,monospace" font-size="11" fill="#8B949E">static · last 12 months</text>
-<rect x="38.4" y="146.0" width="34" height="80.0" rx="4" fill="#8b0000"/>
-<text x="55.4" y="141.0" text-anchor="middle" font-family="Fira Code,Consolas,monospace" font-size="11" fill="#C9D1D9">40</text>
+<rect x="38.4" y="112.0" width="34" height="114.0" rx="4" fill="#8b0000"/>
+<text x="55.4" y="107.0" text-anchor="middle" font-family="Fira Code,Consolas,monospace" font-size="11" fill="#C9D1D9">57</text>
 <text x="55.4" y="242" text-anchor="middle" font-family="Fira Code,Consolas,monospace" font-size="11" fill="#8B949E">Sun</text>
 <rect x="101.3" y="148.0" width="34" height="78.0" rx="4" fill="#8b0000"/>
 <text x="118.3" y="143.0" text-anchor="middle" font-family="Fira Code,Consolas,monospace" font-size="11" fill="#C9D1D9">39</text>
