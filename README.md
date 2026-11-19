@@ -24,7 +24,7 @@ Name      : Md MatlooB Alam
 Role      : Aspiring Data Analyst
 Location  : India 🇮🇳
 Strategy  : Plan the data, play the insight
-Arsenal   : Python | SQL | Power BI | Tableau
+Arsenal   : Jupyter Notebook | TypeScript | JavaScript | CSS
 Mission   : Turn Raw Data into Actionable Insights
 Status    : Open to Opportunities ✅
 ```
@@ -44,11 +44,11 @@ Status    : Open to Opportunities ✅
 <!--CHESS_STATS:START-->
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/alam292/alam292/main/assets/chess-board.svg?v=1795100666" alt="Contribution chess board" width="476"/>
+<img src="https://raw.githubusercontent.com/alam292/alam292/main/assets/chess-board.svg?v=1795104443" alt="Contribution chess board" width="476"/>
 
-![Progress](https://img.shields.io/badge/Progress%20to%20Bishop-370%2F500-E63946?style=for-the-badge&labelColor=0D1117)
+![Progress](https://img.shields.io/badge/Progress%20to%20Bishop-371%2F500-E63946?style=for-the-badge&labelColor=0D1117)
 
-**130** more contributions to reach **Bishop ♝**
+**129** more contributions to reach **Bishop ♝**
 
 | Piece | Rank | Contributions | Status |
 |:-----:|:-----|:-------------:|:------:|
@@ -65,19 +65,19 @@ Status    : Open to Opportunities ✅
 
 | 📊 Contributions | 💾 Commits | 🔀 Pull requests | 🐛 Issues | 📦 Repos created |
 |:-:|:-:|:-:|:-:|:-:|
-| **370** | **341** | **21** | **0** | **8** |
+| **371** | **342** | **21** | **0** | **8** |
 
 </div>
 
 **🚀 Latest pushes**
 
-- [`PDF-maker`](https://github.com/alam292/PDF-maker) · pushed 2026-11-19
 - [`Alam292`](https://github.com/alam292/Alam292) · pushed 2026-11-19
+- [`PDF-maker`](https://github.com/alam292/PDF-maker) · pushed 2026-11-19
 - [`Protfolio`](https://github.com/alam292/Protfolio) · pushed 2026-11-09
 - [`ecommerce-sales-performance-customer-behavior-analysis`](https://github.com/alam292/ecommerce-sales-performance-customer-behavior-analysis) · pushed 2026-10-06
 - [`MediWeb`](https://github.com/alam292/MediWeb) · pushed 2026-09-11
 
-<sub>🤖 Auto-updated: 2026-11-19 15:04 UTC</sub>
+<sub>🤖 Auto-updated: 2026-11-19 16:07 UTC</sub>
 <!--CHESS_STATS:END-->
 
 ---
@@ -87,14 +87,14 @@ Status    : Open to Opportunities ✅
 <!--PACMAN_STATS:START-->
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/alam292/alam292/main/assets/pacman-contribution.svg?v=1795100666" alt="Pac-Man eating my contribution graph" width="100%"/>
+<img src="https://raw.githubusercontent.com/alam292/alam292/main/assets/pacman-contribution.svg?v=1795104443" alt="Pac-Man eating my contribution graph" width="100%"/>
 
 ### 📊 Statistics Graphs
 
-<img src="https://raw.githubusercontent.com/alam292/alam292/main/assets/stats-monthly.svg?v=1795100666" alt="Monthly contributions (animated)" width="49%"/>
-<img src="https://raw.githubusercontent.com/alam292/alam292/main/assets/stats-weekday.svg?v=1795100666" alt="Contributions by weekday (static)" width="49%"/>
+<img src="https://raw.githubusercontent.com/alam292/alam292/main/assets/stats-monthly.svg?v=1795104443" alt="Monthly contributions (animated)" width="49%"/>
+<img src="https://raw.githubusercontent.com/alam292/alam292/main/assets/stats-weekday.svg?v=1795104443" alt="Contributions by weekday (static)" width="49%"/>
 
-<img src="https://raw.githubusercontent.com/alam292/alam292/main/assets/stats-weekly.svg?v=1795100666" alt="Weekly contributions (animated)" width="100%"/>
+<img src="https://raw.githubusercontent.com/alam292/alam292/main/assets/stats-weekly.svg?v=1795104443" alt="Weekly contributions (animated)" width="100%"/>
 
 </div>
 <!--PACMAN_STATS:END-->
@@ -211,6 +211,9 @@ issues, repos, recent pushes) and generates, with ZERO third-party dependencies:
   assets/stats-monthly.svg        ANIMATED monthly contribution bars
   assets/stats-weekly.svg         ANIMATED weekly contribution line
   assets/stats-weekday.svg        STATIC contributions-by-weekday bars
+  assets/tech-stack.svg           ANIMATED most-used languages (auto-detected from your repos)
+
+Also rewrites the banner headline + typing text + tech-stack section with your top languages.
 
 Then rewrites the auto-generated blocks of README.md (and this code listing).
 
@@ -218,7 +221,7 @@ Usage:  GH_TOKEN=... python scripts/update_profile.py      (real data)
         python scripts/update_profile.py --demo           (fake data, preview only)
 """
 import os, sys, json, re, random, calendar, datetime as dt, urllib.request
-from urllib.parse import quote
+from urllib.parse import quote, quote_plus
 from xml.sax.saxutils import escape
 
 USER = os.environ.get("GH_USER") or os.environ.get("GITHUB_REPOSITORY_OWNER") or "alam292"
@@ -240,6 +243,8 @@ query($login:String!){ user(login:$login){
   repositories(ownerAffiliations:OWNER,isFork:false){totalCount}
   recent: repositories(first:5,ownerAffiliations:OWNER,orderBy:{field:PUSHED_AT,direction:DESC}){
     nodes{name url pushedAt}}
+  langs: repositories(first:100,ownerAffiliations:OWNER,isFork:false,privacy:PUBLIC){
+    nodes{ languages(first:10,orderBy:{field:SIZE,direction:DESC}){ edges{ size node{ name color } } } } }
   contributionsCollection{
     totalCommitContributions totalPullRequestContributions
     totalIssueContributions totalRepositoryContributions
@@ -269,7 +274,11 @@ def demo():
         d += dt.timedelta(days=1)
     weeks = [{"contributionDays": days[i:i + 7]} for i in range(0, len(days), 7)]
     total = sum(x["contributionCount"] for x in days)
-    return {"repositories": {"totalCount": 18},
+    mk = lambda n, c, z: {"size": z, "node": {"name": n, "color": c}}
+    langs = {"nodes": [{"languages": {"edges": [mk("Python", "#3572A5", 90000), mk("Jupyter Notebook", "#DA5B0B", 60000), mk("HTML", "#e34c26", 20000)]}},
+                       {"languages": {"edges": [mk("Python", "#3572A5", 40000), mk("JavaScript", "#f1e05a", 30000), mk("CSS", "#563d7c", 9000)]}},
+                       {"languages": {"edges": [mk("SQL", "#e38c00", 15000), mk("Shell", "#89e051", 3000)]}}]}
+    return {"repositories": {"totalCount": 18}, "langs": langs,
             "recent": {"nodes": [{"name": "demo-repo", "url": "https://github.com/x/y", "pushedAt": NOW.isoformat()}]},
             "contributionsCollection": {"totalCommitContributions": 180, "totalPullRequestContributions": 9,
               "totalIssueContributions": 3, "totalRepositoryContributions": 6,
@@ -477,6 +486,77 @@ def draw_weekly(weeks):
     o.append('</svg>')
     return "\n".join(o)
 
+# ----------------------------------------------------------------------------- tech stack (from GitHub languages)
+SLUG = {"Python": "python", "JavaScript": "javascript", "TypeScript": "typescript", "HTML": "html5", "CSS": "css3",
+        "Jupyter Notebook": "jupyter", "Java": "openjdk", "C++": "cplusplus", "C": "c", "C#": "csharp",
+        "Shell": "gnubash", "PowerShell": "powershell", "PLpgSQL": "postgresql", "TSQL": "microsoftsqlserver",
+        "R": "r", "Go": "go", "PHP": "php", "Ruby": "ruby", "Rust": "rust", "Kotlin": "kotlin", "Swift": "swift",
+        "Dart": "dart", "Vue": "vuedotjs", "SCSS": "sass", "Dockerfile": "docker", "MATLAB": "mathworks"}
+
+def collect_langs(u):
+    agg = {}
+    for repo in u["langs"]["nodes"]:
+        for e in repo["languages"]["edges"]:
+            n = e["node"]["name"]
+            a = agg.setdefault(n, {"name": n, "size": 0, "repos": 0, "color": e["node"]["color"] or "#E63946"})
+            a["size"] += e["size"]; a["repos"] += 1
+    return sorted(agg.values(), key=lambda a: -a["size"])
+
+def badge(l):
+    col = l["color"].lstrip("#")
+    r, g, b = (int(col[i:i + 2], 16) for i in (0, 2, 4))
+    logo_col = "black" if (0.299 * r + 0.587 * g + 0.114 * b) > 150 else "white"
+    label = quote(l["name"].replace("-", "--"), safe="")
+    logo = f"&logo={SLUG[l['name']]}" if l["name"] in SLUG else ""
+    return f"![{l['name']}](https://img.shields.io/badge/{label}-{col}?style=for-the-badge{logo}&logoColor={logo_col})"
+
+def draw_techstack(langs):
+    top = langs[:8]
+    total = sum(l["size"] for l in langs) or 1
+    W, T = 600, 6.0
+    H = 76 + len(top) * 34
+    o = svg_open(W, H)
+    title(o, W, "Most used languages", "auto-detected from my public GitHub repos")
+    mx = max(l["size"] for l in top) / total if top else 1
+    for i, l in enumerate(top):
+        y, share = 66 + i * 34, l["size"] / total
+        w = max(4, share / mx * 340)
+        s0, e0 = 0.3 + i * 0.2, 0.3 + i * 0.2 + 0.8
+        o.append(f'<text x="24" y="{y+14}" font-family="{FONT}" font-size="13" fill="{TXT}">{escape(l["name"])}</text>')
+        o.append(f'<rect x="170" y="{y}" width="340" height="20" rx="5" fill="#161b22"/>')
+        o.append(f'<rect x="170" y="{y}" width="{w:.1f}" height="20" rx="5" fill="{l["color"]}">'
+                 f'<animate attributeName="width" dur="{T}s" repeatCount="indefinite" keyTimes="0;{s0/T:.4f};{e0/T:.4f};1" values="0;0;{w:.1f};{w:.1f}"/></rect>')
+        o.append(f'<text x="{W-24}" y="{y+14}" text-anchor="end" font-family="{FONT}" font-size="13" font-weight="700" fill="{RED}">{share*100:.1f}%</text>')
+    o.append('</svg>')
+    return "\n".join(o)
+
+def banner_block(langs):
+    top = [l["name"] for l in langs[:4]] or ["Python"]
+    desc = quote("♟ " + " | ".join(top) + " ♟", safe="")
+    banner = ("https://capsule-render.vercel.app/api?type=venom&color=0:0D1117,50:8B0000,100:E63946&height=220&section=header"
+              f"&text=Md%20MatlooB%20Alam&fontSize=58&fontColor=FFFFFF&fontAlignY=40&desc={desc}&descAlignY=62&descSize=20&animation=fadeIn")
+    lines = ["♟ Every Move Is Backed by Data", "Most Used Stack: " + " | ".join([l["name"] for l in langs[:5]]),
+             "Turning Data into Decisions 🧠", "Think Like a Grandmaster, Analyze Like a Pro ♛"]
+    typing = ("https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=E63946&center=true&vCenter=true&width=760&lines="
+              + ";".join(quote_plus(x) for x in lines))
+    return f'<img width="100%" src="{banner}"/>\n\n<img src="{typing}" alt="Typing SVG" />'
+
+def tech_block(langs):
+    total = sum(l["size"] for l in langs) or 1
+    pieces = ["♚ King", "♛ Queen", "♜ Rook", "♝ Bishop", "♞ Knight", "♟ Pawn"]
+    rows = "\n".join(f'| {pc} | **{l["name"]}** | {l["size"] / total * 100:.1f}% | {l["repos"]} |'
+                     for pc, l in zip(pieces, langs))
+    badges = "\n".join(badge(l) for l in langs[:12])
+    return f"""<img src="{raw('tech-stack.svg')}" alt="Most used languages" width="600"/>
+
+| Piece | Language | Share of my code | Repos |
+|:-----:|:---------|:----------------:|:-----:|
+{rows}
+
+{badges}
+
+<sub>🤖 Auto-detected from my public repositories · updated {NOW:%Y-%m-%d %H:%M} UTC</sub>"""
+
 # ----------------------------------------------------------------------------- README
 def marker(name, kind):                      # built dynamically so this file never contains a full marker
     return "<!--" + name + ":" + kind + "-->"
@@ -563,6 +643,7 @@ def main():
     total = cal["totalContributions"]
     cur, longest = streaks(days)
     idx, nxt = rank_info(total)
+    langs = collect_langs(u)
 
     assets = os.path.join(ROOT, "assets")
     os.makedirs(assets, exist_ok=True)
@@ -570,7 +651,8 @@ def main():
              "pacman-contribution.svg": draw_pacman(weeks, total, cur),
              "stats-monthly.svg": draw_monthly(days),
              "stats-weekday.svg": draw_weekday(days),
-             "stats-weekly.svg": draw_weekly(weeks)}
+             "stats-weekly.svg": draw_weekly(weeks),
+             "tech-stack.svg": draw_techstack(langs)}
     for name, svg in files.items():
         with open(os.path.join(assets, name), "w", encoding="utf-8") as f:
             f.write(svg)
@@ -578,12 +660,15 @@ def main():
     path = os.path.join(ROOT, "README.md")
     with open(path, encoding="utf-8") as f:
         s = f.read()
+    s = put_block(s, "BANNER", banner_block(langs))
+    s = put_block(s, "TECH_STACK", tech_block(langs))
+    s = re.sub(r"(?m)^Arsenal\s*:.*$", "Arsenal   : " + " | ".join(l["name"] for l in langs[:4]), s)
     s = put_block(s, "CHESS_STATS", chess_block(u, total, cur, longest, days, idx, nxt))
     s = put_block(s, "PACMAN_STATS", pacman_block())
     s = put_block(s, "PYTHON_CODE", code_block())
     with open(path, "w", encoding="utf-8") as f:
         f.write(s)
-    print(f"updated: {total} contributions, streak {cur}/{longest}, rank {RANKS[idx][1]}")
+    print(f"updated: {total} contributions, streak {cur}/{longest}, rank {RANKS[idx][1]}, top stack: {[l['name'] for l in langs[:4]]}")
 
 if __name__ == "__main__":
     main()

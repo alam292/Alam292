@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 348" width="600" height="348">
+<rect width="600" height="348" rx="14" fill="#0D1117"/>
+<text x="300.0" y="30" text-anchor="middle" font-family="Fira Code,Consolas,monospace" font-size="16" font-weight="700" fill="#E63946">Most used languages</text>
+<text x="300.0" y="48" text-anchor="middle" font-family="Fira Code,Consolas,monospace" font-size="11" fill="#8B949E">auto-detected from my public GitHub repos</text>
+<text x="24" y="80" font-family="Fira Code,Consolas,monospace" font-size="13" fill="#C9D1D9">Jupyter Notebook</text>
+<rect x="170" y="66" width="340" height="20" rx="5" fill="#161b22"/>
+<rect x="170" y="66" width="340.0" height="20" rx="5" fill="#DA5B0B"><animate attributeName="width" dur="6.0s" repeatCount="indefinite" keyTimes="0;0.0500;0.1833;1" values="0;0;340.0;340.0"/></rect>
+<text x="576" y="80" text-anchor="end" font-family="Fira Code,Consolas,monospace" font-size="13" font-weight="700" fill="#E63946">85.2%</text>
+<text x="24" y="114" font-family="Fira Code,Consolas,monospace" font-size="13" fill="#C9D1D9">TypeScript</text>
+<rect x="170" y="100" width="340" height="20" rx="5" fill="#161b22"/>
+<rect x="170" y="100" width="30.1" height="20" rx="5" fill="#3178c6"><animate attributeName="width" dur="6.0s" repeatCount="indefinite" keyTimes="0;0.0833;0.2167;1" values="0;0;30.1;30.1"/></rect>
+<text x="576" y="114" text-anchor="end" font-family="Fira Code,Consolas,monospace" font-size="13" font-weight="700" fill="#E63946">7.5%</text>
+<text x="24" y="148" font-family="Fira Code,Consolas,monospace" font-size="13" fill="#C9D1D9">JavaScript</text>
+<rect x="170" y="134" width="340" height="20" rx="5" fill="#161b22"/>
+<rect x="170" y="134" width="11.9" height="20" rx="5" fill="#f1e05a"><animate attributeName="width" dur="6.0s" repeatCount="indefinite" keyTimes="0;0.1167;0.2500;1" values="0;0;11.9;11.9"/></rect>
+<text x="576" y="148" text-anchor="end" font-family="Fira Code,Consolas,monospace" font-size="13" font-weight="700" fill="#E63946">3.0%</text>
+<text x="24" y="182" font-family="Fira Code,Consolas,monospace" font-size="13" fill="#C9D1D9">CSS</text>
+<rect x="170" y="168" width="340" height="20" rx="5" fill="#161b22"/>
+<rect x="170" y="168" width="7.4" height="20" rx="5" fill="#663399"><animate attributeName="width" dur="6.0s" repeatCount="indefinite" keyTimes="0;0.1500;0.2833;1" values="0;0;7.4;7.4"/></rect>
+<text x="576" y="182" text-anchor="end" font-family="Fira Code,Consolas,monospace" font-size="13" font-weight="700" fill="#E63946">1.9%</text>
+<text x="24" y="216" font-family="Fira Code,Consolas,monospace" font-size="13" fill="#C9D1D9">Python</text>
+<rect x="170" y="202" width="340" height="20" rx="5" fill="#161b22"/>
+<rect x="170" y="202" width="6.0" height="20" rx="5" fill="#3572A5"><animate attributeName="width" dur="6.0s" repeatCount="indefinite" keyTimes="0;0.1833;0.3167;1" values="0;0;6.0;6.0"/></rect>
+<text x="576" y="216" text-anchor="end" font-family="Fira Code,Consolas,monospace" font-size="13" font-weight="700" fill="#E63946">1.5%</text>
+<text x="24" y="250" font-family="Fira Code,Consolas,monospace" font-size="13" fill="#C9D1D9">HTML</text>
+<rect x="170" y="236" width="340" height="20" rx="5" fill="#161b22"/>
+<rect x="170" y="236" width="4.0" height="20" rx="5" fill="#e34c26"><animate attributeName="width" dur="6.0s" repeatCount="indefinite" keyTimes="0;0.2167;0.3500;1" values="0;0;4.0;4.0"/></rect>
+<text x="576" y="250" text-anchor="end" font-family="Fira Code,Consolas,monospace" font-size="13" font-weight="700" fill="#E63946">0.9%</text>
+<text x="24" y="284" font-family="Fira Code,Consolas,monospace" font-size="13" fill="#C9D1D9">Kotlin</text>
+<rect x="170" y="270" width="340" height="20" rx="5" fill="#161b22"/>
+<rect x="170" y="270" width="4.0" height="20" rx="5" fill="#A97BFF"><animate attributeName="width" dur="6.0s" repeatCount="indefinite" keyTimes="0;0.2500;0.3833;1" values="0;0;4.0;4.0"/></rect>
+<text x="576" y="284" text-anchor="end" font-family="Fira Code,Consolas,monospace" font-size="13" font-weight="700" fill="#E63946">0.1%</text>
+<text x="24" y="318" font-family="Fira Code,Consolas,monospace" font-size="13" fill="#C9D1D9">Java</text>
+<rect x="170" y="304" width="340" height="20" rx="5" fill="#161b22"/>
+<rect x="170" y="304" width="4.0" height="20" rx="5" fill="#b07219"><animate attributeName="width" dur="6.0s" repeatCount="indefinite" keyTimes="0;0.2833;0.4167;1" values="0;0;4.0;4.0"/></rect>
+<text x="576" y="318" text-anchor="end" font-family="Fira Code,Consolas,monospace" font-size="13" font-weight="700" fill="#E63946">0.0%</text>
+</svg>
